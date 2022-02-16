@@ -32,7 +32,7 @@ app.get('/', function(req, res) {
       // authenticated
       org.authenticate(req.query, function(err) {
         if (!err) {
-          org.query({ query: 'SELECT id, name, type, industry, rating FROM Account' }, function(err, results) {
+          org.query({ query: 'SELECT Id,Name,vlocity_cmt__Type__c,vlocity_cmt__SubType__c,vlocity_cmt__SpecificationSubType__c,vlocity_cmt__SpecificationType__c,vlocity_cmt__IsOrderable__c,ProductCode,vlocity_cmt__ClassId__r.Name,vlocity_cmt__ParentClassCode__c,vlocity_cmt__ObjectTypeId__c,vlocity_cmt__ObjectTypeName__c,vlocity_cmt__JSONAttribute__c from Product2' }, function(err, results) {
             if (!err) {
               res.render('index', {records: results.records});
             }
